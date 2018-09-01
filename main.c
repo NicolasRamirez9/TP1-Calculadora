@@ -20,9 +20,9 @@ int main()
 
         printf ("2- Resta (-).\n");
 
-        printf ("3- Division (/).\n");
+        printf ("3- Multiplicacion (*).\n");
 
-        printf ("4- Multiplicacion (*).\n");
+        printf ("4- Division (/).\n");
 
         printf ("5- Factoreo.\n");
 
@@ -90,7 +90,7 @@ int main()
             printf("¡Ingrese una opcion valida! \n");
         }
 
-        printf ("¿Desea realizar otra operacion? (Ingrese 'N' o 'n' para salir.)");
+        printf ("\n ¿Desea realizar otra operacion? (Ingrese 'N' o 'n' para salir.)");
         fflush(stdin);
         scanf("%c", &respuesta);
         system("cls");
@@ -133,5 +133,10 @@ float division(float dividirUno , float dividirDos)
 }
 float factorial(float factorUno , float factorDos)
 {
+    int i;
 
+    if (factorUno >= 0)
+    {
+        for(
+    }
 }

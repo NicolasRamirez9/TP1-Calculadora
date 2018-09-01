@@ -16,17 +16,17 @@ int main()
 
     do
     {
-        printf ("1- Suma (+)./n");
+        printf ("1- Suma (+).\n");
 
-        printf ("2- Resta (-)./n");
+        printf ("2- Resta (-).\n");
 
-        printf ("3- Division (/)./n");
+        printf ("3- Division (/).\n");
 
-        printf ("4- Multiplicacion (*)./n");
+        printf ("4- Multiplicacion (*).\n");
 
-        printf ("5- Factoreo./n");
+        printf ("5- Factoreo.\n");
 
-        printf ("Selecciona la operacion que desee ejecutar: ");
+        printf ("Selecciona la operacion que desee ejecutar: \n");
         scanf ("%d" , &opciones);
 
         switch (opciones)
@@ -95,7 +95,7 @@ int main()
         scanf("%c", &respuesta);
         system("cls");
 
-    }while(respuesta != 'N' || respuesta != 'n');
+    }while(respuesta != 'N' && respuesta != 'n');
 
     return 0;
 }
@@ -131,11 +131,7 @@ float division(float dividirUno , float dividirDos)
     }
     return dividir;
 }
-float factorial(float numeroUno , float segundoValor)
+float factorial(float factorUno , float factorDos)
 {
-    int i = 1;
-    float primerNumero = 0;
-    float segundoNumero = 0;
 
-    for (primerNumero = numeroUno ; primerNumero < 1 ; i--)
 }

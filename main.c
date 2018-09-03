@@ -1,86 +1,67 @@
 #include <stdio.h>
 #include <stdlib.h>
-float suma (float , float);
-float resta (float , float);
-float multiplicacion (float , float);
-float division (float , float);
-float factorial (float , float);
+#include "Biblioteca.h"
 
 int main()
 {
     int opciones;
     float primerValor;
     float segundoValor;
-    float resultado;
-    char respuesta;
+    float resultadoSuma;
+    float resultadoResta;
+    float resultadoMultiplicacion;
+    float resultadoDivision;
+    float resultadoFactoreoUno;
+    float resultadoFactoreoDos;
 
     do
     {
-        printf ("1. Ingresar 1er operando (A=x). \n");
+        printf ("\n 1. Ingresar 1er operando (A = %.2f ). \n" , primerValor);
 
-        printf ("2. Ingresar 2do operando (B=y). \n");
+        printf ("\n 2. Ingresar 2do operando (B = %.2f). \n" , segundoValor);
 
-        printf ("3. Calcular todas las operaciones: \n");
-        printf ("a) Calcular la suma (A+B). \n");
-        printf ("b) Calcular la resta (A-B). \n");
-        printf ("c) Calcular la division (A/B). \n");
-        printf ("d) Calcular la multiplicacion (A*B). \n");
-        printf ("e) Calcular el factorial (A!). \n");
+        printf ("\n 3. Calcular todas las operaciones: \n");
 
-        printf ("4. Informar resultados: \n");
-        printf("a) El resultado de A+B es: r. \n");
-        printf("b) El resultado de A-B es: r. \n");
-        printf("c) El resultado de A/B es: r o No es posible dividir por cero. \n");
-        printf("d) El resultado de A*B es: r. \n");
-        printf("e) El factorial de A es: r1 y El factorial de B es: r2. \n");
+        printf ("\n 4. Informar resultados: \n");
 
-        printf("5. Salir. \n");
+        printf ("\n 5. Salir. \n");
 
-        printf ("Selecciona la operacion que desee ejecutar: \n");
-        scanf ("%d" , &opciones);
+        opciones = ingresarOpcion();
 
         switch (opciones)
         {
         case 1:
             system ("cls");
-            printf ("Ingrese el primer numero: ");
-            scanf ("%f" , &primerValor);
-            printf ("Ingrese el segundo numero: ");
-            scanf ("%f" , &segundoValor);
-            suma (primerValor , segundoValor);
-            resultado = suma (primerValor , segundoValor);
-            printf("El resultado de %2.f + %2.f es: %.2f \n" , primerValor , segundoValor , resultado);
+            primerValor = ingresarFlotante();
+            system ("pause");
             break;
 
         case 2:
             system ("cls");
-            printf ("Ingrese el primer numero: ");
-            scanf ("%f" , &primerValor);
-            printf ("Ingrese el segundo numero: ");
-            scanf ("%f" , &segundoValor);
-            resta (primerValor , segundoValor);
-            resultado = resta (primerValor , segundoValor);
-            printf("El resultado de %2.f - %2.f es: %.2f \n" , primerValor , segundoValor , resultado);
+            segundoValor = ingresarFlotante();
+            system ("pause");
             break;
 
         case 3:
             system ("cls");
-            printf ("Ingrese el primer numero: ");
-            scanf ("%f" , &primerValor);
-            printf ("Ingrese el segundo numero: ");
-            scanf ("%f" , &segundoValor);
-            multiplicacion (primerValor , segundoValor);
-            resultado = multiplicacion (primerValor , segundoValor);
-            printf("El resultado de %2.f * %2.f es: %.2f \n" , primerValor , segundoValor , resultado);
+            resultadoSuma = suma(primerValor , segundoValor);
+            resultadoResta = resta(primerValor , segundoValor);
+            resultadoMultiplicacion = multiplicacion(primerValor , segundoValor);
+            resultadoDivision = division(primerValor , segundoValor);
+            resultadoFactoreoUno = factorial(primerValor , segundoValor);
+            resultadoFactoreoDos = factorial(primerValor , segundoValor);
+            printf ("Calculando...");
+            system ("pause");
             break;
 
         case 4:
             system ("cls");
-            printf ("Ingrese el primer numero: ");
-            scanf ("%f" , &primerValor);
-            printf ("Ingrese el segundo numero: ");
-            scanf ("%f" , &segundoValor);
-            division (primerValor , segundoValor);
+            printf(" \n El resultado de %2.f + %2.f es: %2.f \n" , primerValor , segundoValor , resultadoSuma);
+            printf(" \n El resultado de %2.f - %2.f es: %2.f \n" , primerValor , segundoValor , resultadoResta);
+            printf(" \n El resultado de %2.f * %2.f es: %2.f \n" , primerValor , segundoValor , resultadoMultiplicacion);
+            printf(" \n El resultado de %2.f / %2.f es: %2.f \n" , primerValor , segundoValor , resultadoDivision);
+            printf(" \n El factorial de %2.f es: %2.f y el factorial de %2.f es: %2.f" , primerValor , resultadoFactoreoUno , segundoValor , resultadoFactoreoDos);
+            system("pause");
             break;
 
         case 5:
@@ -88,80 +69,14 @@ int main()
             break;
 
         default:
-            printf("¡Ingrese una opcion valida! \n");
+            printf("\n Ingrese una opcion valida! \n");
+            system("pause");
         }
 
         system("pause");
         system("cls");
 
-    }while(respuesta != 6);
+    }while(opciones != 6);
 
     return 0;
-}
-float suma (float sumaUno , float sumaDos)
-{
-    float sumar;
-    sumar = sumaUno + sumaDos;
-    return sumar;
-}
-float resta (float restaUno , float restaDos)
-{
-    float restar;
-    restar = restaUno - restaDos;
-    return restar;
-}
-float multiplicacion (float multiplicarUno , float multiplicarDos)
-{
-    float multiplicar;
-    multiplicar = multiplicarUno * multiplicarDos;
-    return multiplicar;
-}
-float division(float dividirUno , float dividirDos)
-{
-    float dividir;
-    if (dividirDos != 0)
-    {
-        dividir = dividirUno / dividirDos;
-        printf("El resultado de %2.f / %2.f es: %.2f \n" , dividirUno , dividirDos , dividir);
-    }
-    else
-    {
-        printf("¡No es posible dividir por cero!");
-    }
-    return dividir;
-}
-float factorial(float factorUno , float factorDos)
-{
-    float factorDeUno;
-    float factorDeDos;
-    float valorUno;
-    float valorDos;
-
-    valorUno = 1;
-    valorDos = 1;
-
-    if (factorUno > 0)
-    {
-        for (factorDeUno = factorUno ; factorDeUno > 1 ; factorDeUno--)
-        {
-            valorUno = valorUno * factorDeUno;
-        }
-        printf ("El factor de %.2f es: %.2f \n" , factorUno , valorUno );
-    }
-    else
-    {
-        printf("\n No se puede factorear un numero negativo! \n");
-    }
-    if (factorDos > 0)
-    {
-        for (factorDeDos = factorUno ; factorDeDos > 1 ; factorDeDos--)
-        {
-            valorDos = valorDos * factorDeDos;
-        }
-        printf ("El factor de %.2f es: %.2f \n" , factorDos , valorDos );
-    }
-    else
-    {
-        printf("\n No se puede factorear un numero negativo! \n");
-    }
 }

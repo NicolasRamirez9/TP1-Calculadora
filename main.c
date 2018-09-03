@@ -26,6 +26,8 @@ int main()
 
         printf ("5- Factoreo.\n");
 
+        printf("6- Salir.\n");
+
         printf ("Selecciona la operacion que desee ejecutar: \n");
         scanf ("%d" , &opciones);
 
@@ -90,12 +92,10 @@ int main()
             printf("¡Ingrese una opcion valida! \n");
         }
 
-        printf ("\n ¿Desea realizar otra operacion? (Ingrese 'N' o 'n' para salir.)");
-        fflush(stdin);
-        scanf("%c", &respuesta);
+        system("pause");
         system("cls");
 
-    }while(respuesta != 'N' && respuesta != 'n');
+    }while(respuesta != 6);
 
     return 0;
 }
@@ -133,10 +133,36 @@ float division(float dividirUno , float dividirDos)
 }
 float factorial(float factorUno , float factorDos)
 {
-    int i;
+    float factorDeUno;
+    float factorDeDos;
+    float valorUno;
+    float valorDos;
 
-    if (factorUno >= 0)
+    valorUno = 1;
+    valorDos = 1;
+
+    if (factorUno > 0)
     {
-
+        for (factorDeUno = factorUno ; factorDeUno > 1 ; factorDeUno--)
+        {
+            valorUno = valorUno * factorDeUno;
+        }
+        printf ("El factor de %.2f es: %.2f \n" , factorUno , valorUno );
+    }
+    else
+    {
+        printf("\n No se puede factorear un numero negativo! \n");
+    }
+    if (factorDos > 0)
+    {
+        for (factorDeDos = factorUno ; factorDeDos > 1 ; factorDeDos--)
+        {
+            valorDos = valorDos * factorDeDos;
+        }
+        printf ("El factor de %.2f es: %.2f \n" , factorDos , valorDos );
+    }
+    else
+    {
+        printf("\n No se puede factorear un numero negativo! \n");
     }
 }

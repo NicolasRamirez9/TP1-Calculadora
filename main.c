@@ -16,17 +16,25 @@ int main()
 
     do
     {
-        printf ("1- Suma (+).\n");
+        printf ("1. Ingresar 1er operando (A=x). \n");
 
-        printf ("2- Resta (-).\n");
+        printf ("2. Ingresar 2do operando (B=y). \n");
 
-        printf ("3- Multiplicacion (*).\n");
+        printf ("3. Calcular todas las operaciones: \n");
+        printf ("a) Calcular la suma (A+B). \n");
+        printf ("b) Calcular la resta (A-B). \n");
+        printf ("c) Calcular la division (A/B). \n");
+        printf ("d) Calcular la multiplicacion (A*B). \n");
+        printf ("e) Calcular el factorial (A!). \n");
 
-        printf ("4- Division (/).\n");
+        printf ("4. Informar resultados: \n");
+        printf("a) El resultado de A+B es: r. \n");
+        printf("b) El resultado de A-B es: r. \n");
+        printf("c) El resultado de A/B es: r o No es posible dividir por cero. \n");
+        printf("d) El resultado de A*B es: r. \n");
+        printf("e) El factorial de A es: r1 y El factorial de B es: r2. \n");
 
-        printf ("5- Factoreo.\n");
-
-        printf("6- Salir.\n");
+        printf("5. Salir. \n");
 
         printf ("Selecciona la operacion que desee ejecutar: \n");
         scanf ("%d" , &opciones);
@@ -76,16 +84,7 @@ int main()
             break;
 
         case 5:
-            system ("cls");
-            printf ("Ingrese el primer numero: ");
-            scanf ("%f" , &primerValor);
-            printf ("Ingrese el segundo numero: ");
-            scanf ("%f" , &segundoValor);
-            factorial (primerValor , segundoValor);
-            break;
-
-        case 6:
-            opciones = 6;
+            opciones = 5;
             break;
 
         default:
